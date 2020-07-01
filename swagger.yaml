@@ -1,0 +1,44 @@
+openapi: 3.0.1
+
+info:
+  title: color-transfer-swagger
+  version: 0.1
+
+servers:
+  - url: https://color-transfer-woomurf.endpoint.ainize.ai/
+
+paths:
+  /transfer:
+    post:
+      requestBody:
+        required: true
+        description: "upload source image and target image"
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                source:
+                  type: string
+                  format: binary
+                target:
+                  type: string
+                  format: binary
+            
+            encoding:
+              files:
+                contentType: image/*
+      
+      responses:
+        '200':
+          descrition: success
+          content:
+            images/*:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad Request
+        
+        '500':
+          description: Server side error

@@ -4,6 +4,7 @@ RUN pip3 install flask
 RUN pip3 install opencv-python 
 RUN pip3 install numpy 
 RUN pip3 install color_transfer 
+RUN pip3 install pillow
 
 COPY . .
 

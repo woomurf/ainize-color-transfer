@@ -1,12 +1,79 @@
 <HTML>
     <head>
     </head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <title>Color Transfer</title>    
+    </head>
     <body>
-        <form action = "/transfer" method = "POST"
-            enctype="multipart/form-data">
-            <input type = 'file' name = 'source'>
-            <input type = 'file' name = 'target'>
-            <input type = "submit"/>
-        </form>
+        <div class = "container">
+            <div class="jumbotron mt-3">
+                
+                <h1>Color Transfer</h1>
+                <A>Git Hub repository : </A> <A href="https://github.com/woomurf/ainize-color-transfer"> color-transfer</A>
+                <br>
+                <A>Testing API : </A> <A href="https://ainize.ai/woomurf/color-transfer"> on Ainize </A>
+
+                <hr class="solid">
+                
+                <h2>Upload </h2>
+                <div id = 'inputImage'>
+                    <label for="source">source image : </label>
+                    <input type = 'file' id = 'source' style="margin-right: 10px; margin-bottom: 10px;">
+                    <label for="target">target image : </label>
+                    <input type = 'file' id = 'target' style="margin-right: 10px; margin-bottom: 10px;">
+                    <button id = "submit" type='submit' class="btn btn-primary btn-lg" style="margin-left: auto;"> submit </button>
+                </div>
+                
+                <div id ='resultBox' style="margin-left: auto; margin-right: auto;">
+                    <p id='errorbox'></p>
+                    <img id='resultImage' src="" alt="">
+                </div>
+                <script>
+                    document.getElementById("submit").onclick = () => {
+                        var formData = new FormData();
+                        var source = document.getElementById('source').files[0]
+                        var target = document.getElementById('target').files[0]
+                        
+                        formData.append('source', source)
+                        formData.append('target', target)
+        
+                        fetch(
+                            '/transfer',
+                            {
+                                method: 'POST',
+                                body: formData,
+                            }
+                        )
+                        .then(response => {
+                            if ( response.status == 200){
+                                return response 
+                            }
+                            else{
+                                throw Error("transfer error")
+                                
+                            }
+                        })
+                        .then(response => response.blob())
+                        .then(blob => URL.createObjectURL(blob))
+                        .then(imageURL => {
+                            document.getElementById("resultImage").src = imageURL;
+                        })
+                        .catch(e =>{
+                            document.getElementById("errorbox").innerHTML = e;
+                        })
+                    }
+
+                </script>
+            </div>
+        </div>
     </body>
 </HTML>
+
