@@ -65,6 +65,7 @@
                         .then(blob => URL.createObjectURL(blob))
                         .then(imageURL => {
                             document.getElementById("resultImage").src = imageURL;
+                            document.getElementById("errorbox").innerHTML = "";
                         })
                         .catch(e =>{
                             document.getElementById("errorbox").innerHTML = e;
