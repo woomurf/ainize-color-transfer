@@ -8,10 +8,9 @@ import cv2
 
 def runTransfer(source, target, output=None):
 
-	# load the images
-	source = cv2.imread(source)
-	target = cv2.imread(target)
-
+	# convert RGB to BGR
+	source = np.array(source)[:, :, ::-1].copy()
+	target = np.array(target)[:, :, ::-1].copy()
 
 	# transfer the color distribution from the source image
 	# to the target image

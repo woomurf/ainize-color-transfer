@@ -25,7 +25,7 @@ now the server is available at [http://localhost](http://localhost).
 
 ### How to Use?
 1. select source image file and target image file 
-2. and click `submit`
+2. and click `Run`
 
 **source Image**
 <br>
