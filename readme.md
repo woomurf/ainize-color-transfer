@@ -37,4 +37,4 @@ now the server is available at [http://localhost](http://localhost).
 
 **Result**
 <br>
-<img width="300" src="./images/result.jpg">
+<img width="600" src="./images/result.jpg">
