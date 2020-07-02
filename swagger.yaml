@@ -5,7 +5,7 @@ info:
   version: 0.1
 
 servers:
-  - url: https://color-transfer-woomurf.endpoint.ainize.ai/
+  - url: https://ainize-color-transfer-woomurf.endpoint.ainize.ai/
 
 paths:
   /transfer:
