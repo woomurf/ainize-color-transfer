@@ -1,8 +1,22 @@
 openapi: 3.0.1
 
 info:
-  title: color-transfer-swagger
+  title: ainize-color-transfer-swagger
+  description: | 
+    `color_transfer` package transfer source image's color to target image super fast.
+
+    You can test color transfer operation in API or **[Web Server](https://ainize-color-transfer-woomurf.endpoint.ainize.ai/)** using this API.
+    
+    ---
+    
+      How to use:
+      * Select a source image 
+      * Select a target image 
+      * Execute and wait little time
+
   version: 0.1
+  license: 
+    name: "MIT"
 
 servers:
   - url: https://ainize-color-transfer-woomurf.endpoint.ainize.ai/
@@ -12,7 +26,7 @@ paths:
     post:
       requestBody:
         required: true
-        description: "upload source image and target image"
+        description: "Transfer color from source image to target image"
         content:
           multipart/form-data:
             schema:
