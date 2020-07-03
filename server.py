@@ -15,8 +15,8 @@ def index():
 def trans_color():
     if request.method == "POST":
         try:
-            source = Image.open(request.files['source'].stream).convert('RGB')
-            target = Image.open(request.files['target'].stream).convert('RGB')
+            source = Image.open(request.files['color_source'].stream).convert('RGB')
+            target = Image.open(request.files['base'].stream).convert('RGB')
         except Exception as e: 
             return Response("fail", status=400)   
 

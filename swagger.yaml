@@ -10,8 +10,8 @@ info:
     ---
     
       How to use:
-      * Select a source image 
-      * Select a target image 
+      * Select a Color source image 
+      * Select a Base image 
       * Execute and wait little time
 
   version: 0.1
@@ -26,7 +26,7 @@ paths:
     post:
       requestBody:
         required: true
-        description: "Transfer color from source image to target image"
+        description: "Transfer color from Color source image to Base image"
         content:
           multipart/form-data:
             schema:
