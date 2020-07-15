@@ -10,6 +10,12 @@
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
         <title>Color Transfer</title>    
+
+        <style>
+            .img{
+                height: 250px;
+            }
+        </style>
     </head>
     <body>
         <div class = "container">
@@ -22,11 +28,14 @@
 
                 <hr class="solid">
                 
-                <h2>Upload </h2>
                 <div id="sampleBox">
-                    <a href="https://raw.githubusercontent.com/woomurf/ainize-color-transfer/master/images/autumn.jpg" target="_blank"> Sample color source image</a><br>
-                    <a href="https://raw.githubusercontent.com/woomurf/ainize-color-transfer/master/images/fallingwater.jpg" target="_blank">Sample base image</a>
+                    <h2>Example</h2>
+                    <img class="img" src="https://raw.githubusercontent.com/woomurf/ainize-color-transfer/master/images/autumn.jpg" alt="sample_color_source">
+                    <img class="img" src="https://raw.githubusercontent.com/woomurf/ainize-color-transfer/master/images/fallingwater.jpg" alt="sample_base">
+                    <img class="img" src="https://raw.githubusercontent.com/woomurf/ainize-color-transfer/master/images/autumn_fallingwater.jpeg" alt="sample_result">
                 </div>
+                <br>
+                <h2>Upload </h2>
                 <div id = 'inputImage'>
                     <label for="source">Color source image : </label>
                     <input type = 'file' id = 'source' style="margin-right: 10px; margin-bottom: 10px;">
