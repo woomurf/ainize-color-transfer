@@ -31,5 +31,9 @@ def trans_color():
 
     return send_file(img_io, mimetype="image/jpeg")
 
+@app.route("/healthz", methods=["GET"])
+def healthCheck():
+    return 200
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='80', debug=True)
