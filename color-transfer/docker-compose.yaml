@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+  # target:
+  #   image: dockerhub/target
+  #   ports:
+  #     - "80:80"
+  #   networks:
+  #     - shared
+  locust:
+    build:
+      context: .
+    environment:
+      # TARGET_URL: http://target
+      TARGET_URL: https://ainize-color-transfer-woomurf.endpoint.ainize.ai/
+    ports:
+      - "8089:8089"
+    networks:
+      - shared
+networks:
+  shared:
