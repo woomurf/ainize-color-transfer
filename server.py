@@ -18,7 +18,9 @@ def trans_color():
             source = Image.open(request.files['color_source'].stream).convert('RGB')
             target = Image.open(request.files['base'].stream).convert('RGB')
         except Exception as e: 
-            return Response("fail", status=400)   
+            print("error : not contain image")
+            return Response("fail", status=400)
+            
 
         resultImage = runTransfer(source, target)
         
@@ -36,4 +38,6 @@ def healthCheck():
     return "", 200
 
 if __name__ == '__main__':
+    print("here")
     app.run(host='0.0.0.0', port='80', debug=True)
+

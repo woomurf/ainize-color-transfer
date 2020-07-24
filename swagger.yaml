@@ -26,16 +26,16 @@ paths:
     post:
       requestBody:
         required: true
-        description: "Transfer color from Color source image to Base image"
+        description: "Transfer color from [Color source image](https://raw.githubusercontent.com/woomurf/ainize-color-transfer/master/images/autumn.jpg) to [Base image](https://raw.githubusercontent.com/woomurf/ainize-color-transfer/master/images/fallingwater.jpg)"
         content:
           multipart/form-data:
             schema:
               type: object
               properties:
-                Color source:
+                color_source:
                   type: string
                   format: binary
-                Base:
+                base:
                   type: string
                   format: binary
             
